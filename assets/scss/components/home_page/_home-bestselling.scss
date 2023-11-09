@@ -1,0 +1,143 @@
+.home-bestselling {
+  .home-bestselling__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    .card {
+      box-shadow: 0 2px 10px -2px var(--primary-color-tint-9);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+
+      figure {
+        position: relative;
+        width: fit-content;
+        margin-inline: auto;
+        margin-bottom: 1.5rem;
+
+        .badge {
+          position: absolute;
+          z-index: 1;
+          inset: 0;
+          margin: auto;
+          display: grid;
+          align-content: center;
+          justify-content: center;
+          border-radius: 0.4rem;
+
+          width: 80px;
+          height: 64px;
+
+          span {
+            text-align: center;
+            font-family: 'english-regular';
+            font-size: var(--small-font-size);
+          }
+        }
+
+        .badge.light {
+          background: var(--primary-color-tint-7);
+          color: var(--text-color-dark);
+        }
+
+        .badge.dark {
+          background: var(--primary-color-shade-8);
+          color: var(--text-color-light);
+        }
+
+        img {
+          width: 120px;
+          filter: drop-shadow(0 0 5px var(--primary-color-tint-8));
+        }
+      }
+
+      .info {
+        h5 {
+          text-align: center;
+          margin-bottom: 1rem;
+        }
+
+        a {
+          width: 100%;
+          font-size: var(--small-font-size);
+          font-family: 'light';
+        }
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+  .home-bestselling {
+    .home-bestselling__container {
+      gap: 1.5rem;
+
+      .card {
+        padding: 2rem 1rem 1rem 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-bestselling {
+    .home-bestselling__container {
+      grid-template-columns: none;
+      grid-auto-flow: column;
+      grid-auto-columns: 35%;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+
+      padding-block: 1rem;
+      padding-inline: 0.5rem;
+    }
+
+    .home-bestselling__container::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-bestselling {
+    .home-bestselling__container {
+      gap: 1rem;
+      grid-auto-columns: 40%;
+
+      .card {
+        padding: 1.5rem 1rem 1rem 1rem;
+
+        figure {
+          margin-bottom: 1rem;
+
+          .badge {
+            width: 72px;
+            height: 56px;
+          }
+
+          img {
+            width: 104px;
+          }
+        }
+
+        .info {
+          h5 {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-bestselling {
+    .home-bestselling__container {
+      grid-auto-columns: 65%;
+    }
+  }
+}

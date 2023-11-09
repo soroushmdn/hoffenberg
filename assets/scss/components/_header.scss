@@ -1,0 +1,214 @@
+.header {
+  box-shadow: 0 1px 2px var(--primary-color-tint-10);
+
+  .nav {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    .nav__logo {
+      img {
+        width: 112px;
+      }
+    }
+
+    .nav__menu {
+      .nav__menu-header {
+        display: none;
+      }
+
+      .nav__list {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        .nav__item {
+          .nav__link {
+            color: var(--text-color-dark);
+            display: inline-block;
+            white-space: nowrap;
+            transition: color 0.3s;
+          }
+
+          .nav__link:hover {
+            color: var(--primary-color);
+          }
+
+          .nav__link.active-link {
+            color: var(--primary-color);
+            font-family: 'semibold';
+          }
+        }
+      }
+    }
+
+    .nav__btn {
+      padding: 0.4rem 0.7rem 0.4rem 0.4rem;
+      border-radius: 100rem;
+      margin-right: auto;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+
+      span {
+        font-family: 'semibold';
+      }
+
+      .icon {
+        background: var(--primary-color-tint-3);
+        border-radius: 100rem;
+        width: 36px;
+        height: 36px;
+
+        svg {
+          fill: var(--text-color-lighter);
+        }
+      }
+    }
+
+    .nav__toggle {
+      display: none;
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@  BREAKPOINTS  @@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+  .header {
+    .nav {
+      gap: 2rem;
+
+      .nav__menu {
+        .nav__list {
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    .overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      background: hsla(232, 33%, 49%, 0.1);
+      backdrop-filter: blur(10px);
+      transition: opacity 0.3s;
+    }
+
+    .nav {
+      height: 5rem;
+      justify-content: space-between;
+      gap: 0;
+
+      .nav__logo {
+        img {
+          width: 88px;
+        }
+      }
+
+      .nav__menu {
+        background: var(--background-color);
+        box-shadow: 0 0 30px var(--primary-color-tint-7);
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 45%;
+        height: 100vh;
+        z-index: 100;
+        transition: right 0.3s ease-in-out;
+
+        .nav__menu-header {
+          height: 5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-inline: 1.5rem;
+          border-bottom: 1px solid var(--primary-color-tint-10);
+
+          .nav__close {
+            display: grid;
+            cursor: pointer;
+          }
+        }
+
+        .nav__list {
+          flex-direction: column;
+          padding-inline: 1.5rem;
+          padding-block: 1.5rem;
+
+          .nav__item {
+            width: 100%;
+
+            .nav__link {
+              width: 100%;
+              padding-bottom: 0.5rem;
+              border-bottom: 1px solid var(--primary-color-tint-10);
+              font-size: var(--h5-font-size);
+            }
+          }
+
+          .nav__item:last-child .nav__link {
+            border-bottom: none;
+          }
+        }
+      }
+
+      .nav__btn {
+        margin-right: 0;
+        padding: 0;
+        box-shadow: 0 2px 10px var(--primary-color-tint-8);
+
+        span {
+          display: none;
+        }
+
+        .icon {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .nav__toggle {
+        order: -1;
+        display: grid;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    .nav {
+      .nav__menu {
+        width: 75%;
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@ JS CLASSES @@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.header .overlay.show-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header .nav .nav__menu.show-menu {
+  right: 0;
+}
+
+.remove-body-scroll {
+  overflow: hidden;
+}

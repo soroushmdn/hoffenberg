@@ -1,0 +1,172 @@
+.home-hero {
+  padding-block: 5rem;
+  overflow: hidden;
+
+  .container {
+    .data-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 5rem;
+
+      .data {
+        .h1-p {
+          margin-bottom: 2rem;
+
+          h1 {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+
+            span {
+              color: var(--primary-color);
+              font-family: 'black';
+            }
+          }
+
+          p {
+            font-size: var(--h6-font-size);
+            text-align: justify;
+          }
+        }
+
+        .btn {
+          padding: 0.8rem 1.6rem;
+        }
+      }
+    }
+
+    .stats-container {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      background: var(--primary-color);
+      color: var(--text-color-lighter);
+      padding: 2rem 4rem;
+      border-radius: 1.5rem;
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      figure {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        animation: hero-img 4s alternate linear infinite;
+
+        img {
+          width: 624px;
+        }
+      }
+    }
+  }
+
+  @keyframes hero-img {
+    100% {
+      transform: scale(1.03) translateY(-1rem);
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+  .home-hero {
+    .container {
+      .data-container {
+        margin-bottom: 4rem;
+
+        .data {
+          .h1-p {
+            margin-bottom: 1.5rem;
+          }
+
+          .btn {
+            padding: 0.7rem 1.4rem;
+          }
+        }
+      }
+
+      .stats-container {
+        padding: 2rem 3rem;
+
+        figure {
+          img {
+            width: 512px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-hero {
+    .container {
+      .data-container {
+        grid-template-columns: 1fr;
+        margin-bottom: 7rem;
+
+        .data {
+          .h1-p {
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      .stats-container {
+        figure {
+          img {
+            width: 360px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-hero {
+    .container {
+      .data-container {
+        margin-bottom: 12rem;
+
+        .data {
+          .h1-p {
+            margin-bottom: 1.5rem;
+          }
+
+          .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.7rem;
+          }
+        }
+      }
+
+      .stats-container {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        border-radius: 1rem;
+
+        figure {
+          z-index: -1;
+          bottom: 3.7rem;
+          left: -1.5rem;
+
+          img {
+            width: 272px;
+          }
+        }
+      }
+    }
+
+    @keyframes hero-img {
+      100% {
+        transform: scale(1.03) translateY(-0.5rem);
+      }
+    }
+  }
+}
