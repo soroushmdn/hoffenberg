@@ -1,0 +1,85 @@
+.home-energy-drink {
+  padding-block: 3.5rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 2rem;
+
+    .data {
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        text-align: justify;
+      }
+
+      .btn {
+        padding: 0.8rem 1.6rem;
+      }
+    }
+
+    img {
+      width: 496px;
+      margin-right: auto;
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .home-energy-drink {
+    padding-block: 3rem;
+
+    .container {
+      .data {
+        p {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      img {
+        width: 400px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-energy-drink {
+    padding-block: 2rem;
+
+    .container {
+      grid-template-columns: 1fr;
+
+      .data {
+        h2 {
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          margin-bottom: 1rem;
+        }
+
+        .btn {
+          padding: 0.6rem 1.2rem;
+        }
+      }
+
+      img {
+        margin-inline: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
