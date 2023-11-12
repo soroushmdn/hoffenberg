@@ -1,0 +1,115 @@
+.home-new-flavors {
+  .container {
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      .card {
+        > img {
+          width: 192px;
+          margin-inline: auto;
+        }
+
+        .h5-p {
+          h5 {
+            display: grid;
+            margin-bottom: 0.5rem;
+
+            span {
+              font-family: 'black';
+              font-size: var(--h3-font-size);
+            }
+          }
+        }
+
+        .divider {
+          background: radial-gradient(
+            50% 50% at 50% 50%,
+            #005b4c 0%,
+            rgba(0, 91, 76, 0) 100%
+          );
+          width: 100%;
+          height: 1px;
+
+          margin-top: 1rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .btn {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          width: max-content;
+
+          img {
+            width: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1024px) {
+  .home-new-flavors {
+    .container {
+      .cards-container {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 35%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+      }
+
+      .cards-container::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-new-flavors {
+    .container {
+      .cards-container {
+        grid-auto-columns: 70%;
+        gap: 1.5rem;
+
+        .card {
+          > img {
+            width: 144px;
+          }
+
+          .h5-p {
+            h5 {
+              display: block;
+            }
+          }
+
+          .divider {
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .btn {
+            padding: 0.5rem 0.8rem;
+
+            img {
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
