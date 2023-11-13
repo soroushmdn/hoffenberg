@@ -1,0 +1,104 @@
+.home-club {
+  .home-club-container {
+    background-image: url('../img/club-img.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+
+    padding-block: 4rem;
+    border-radius: var(--border-radius);
+
+    h2 {
+      color: var(--text-color-lighter);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--text-color-light);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      .field {
+        background: var(--background-color);
+        padding: 0.7rem;
+        border-radius: 1rem;
+
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .input-field {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          input {
+            width: 100%;
+          }
+
+          input::placeholder {
+            font-size: var(--small-font-size);
+            color: var(--text-color-dark);
+          }
+
+          .icon {
+            width: 20px;
+            height: 20px;
+
+            svg {
+              width: 20px;
+              height: 20px;
+              fill: var(--text-color-dark);
+              opacity: 0.8;
+            }
+          }
+        }
+
+        input[type='submit'] {
+          background: var(--secondary-color);
+          padding: 0.5rem 1.5rem;
+          border-radius: 0.8rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 767px) {
+  .home-club {
+    .home-club-container {
+      padding: 3rem 1.5rem;
+
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      form {
+        .field {
+          width: 100%;
+          padding: 0.6rem;
+
+          input[type='submit'] {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}
